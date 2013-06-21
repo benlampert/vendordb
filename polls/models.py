@@ -1,11 +1,8 @@
 from django.db import models
-import datetime
 from django.utils import timezone
+import datetime
 
 # Create your models here
-
-
-from django.db import models
 
 class Poll(models.Model):
 	question = models.CharField(max_length=200)
