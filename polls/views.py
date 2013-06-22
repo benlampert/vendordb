@@ -4,7 +4,7 @@ from django.core.urlresolvers import reverse
 from django.views import generic
 from django.shortcuts import render, get_object_or_404
 
-from polls.models import Poll, Choice
+from polls.models import Vendor, VendorDetails
 
 class IndexView(generic.ListView):
 	template_name = 'polls/index.html'
