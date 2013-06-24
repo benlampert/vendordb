@@ -1,10 +1,10 @@
-{% if latest_poll_list %}
+{% if latest_vendor_list %}
 	<ul>
-	{% for poll in latest_poll_list %}
-		<li><a href="{% url 'polls:detail' poll.id %}">{{ poll.question }}</a></li>
+	{% for vendor in latest_vendor_list %}
+		<li><a href="{% url 'polls:detail' company.id %}">{{ company.name }}</a></li>
 	{% endfor %}
 	</ul>
 {% else %}
-	<p>No polls are available.</p>
+	<p>No vendors are available.</p>
 {% endif %}
 

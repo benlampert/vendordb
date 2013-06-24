@@ -1,19 +1,18 @@
 from django.contrib import admin
-from polls.models import Poll, Choice
+from polls.models import company
 
-class ChoiceInline(admin.TabularInline):
-	model = Choice
-	extra = 3
-
-class PollAdmin(admin.ModelAdmin):
+class VendorAdmin(admin.ModelAdmin):
 	fieldsets = [
-		(None, 		{'fields': ['question']}),
-		('Date Information', {'fields': ['pub_date'], 'classes': ['collapse']}),
+		(None, 		{'fields': ['name']}),
+		('Date Information', {'fields': ['pub_date']}),
+		('Description', {'fields': ['description']}),
 		]
-	inlines = [ChoiceInline]
-	list_display = ('question', 'pub_date', 'was_published_recently')
-	list_filter = ['pub_date']
-	search_fields = ['question']
 
-admin.site.register(Poll, PollAdmin)
+	list_display = ('name', 'pub_date', 'was_published_recently')
+	list_filter = ['pub_date']
+	search_fields = ['name', 'description']
+
+
+admin.site.register(company, VendorAdmin)
+
 
